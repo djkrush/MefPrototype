@@ -76,8 +76,9 @@ namespace MefPrototype.ConsoleApp
 			{
 				foreach (var extension in extensionRepository.Extensions)
 				{
-					Console.WriteLine(extension.Name);
-					Console.WriteLine("IsValid: " + extension.IsValid(null));
+					var message = String.Format("{0} ({1})", extension.Name, extension.IsValid(extension));
+
+					Console.WriteLine(message);
 				}
 			}
 
